@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Table {
 
-    private static String  getTableName(Class cls){
+    private static String  getTableName(Class<?> cls){
         String [] tableNameBits = cls.getName().split("\\.");
         return tableNameBits[tableNameBits.length-1];
     }
@@ -22,7 +22,7 @@ public class Table {
         return fieldNameBits[fieldNameBits.length-1];
     }
 
-    public static boolean create(Class cls) throws SQLException {
+    public static boolean create(Class<?> cls) throws SQLException {
         int index = 0;
 
         StringBuilder CREATE_SQL_QUERY = new StringBuilder("CREATE TABLE IF NOT EXISTS ");
@@ -176,7 +176,7 @@ public class Table {
         stmt.executeUpdate();
     }
 
-    public static Object get(Class cls, int id) throws Exception {
+    public static Object get(Class<?> cls, int id) throws Exception {
         String tableName = getTableName(cls);
         String SQL = "SELECT * FROM " + tableName +" WHERE id = " + id;
         Statement stmt = Database.CONNECTION.createStatement();
@@ -198,7 +198,7 @@ public class Table {
         }
     }
 
-    public static List<?> list(Class cls) throws Exception {
+    public static List<?> list(Class<?> cls) throws Exception {
 
         String tableName = getTableName(cls);
         String SQL = "SELECT * FROM " + tableName;
@@ -222,7 +222,7 @@ public class Table {
         return list;
     }
 
-    public static List<?> list(Class cls, int id) throws Exception {
+    public static List<?> list(Class<?> cls, int id) throws Exception {
 
         String tableName = getTableName(cls);
         String SQL = "SELECT * FROM " + tableName + " WHERE idAlbum="+ id + " ORDER BY dodano DESC";

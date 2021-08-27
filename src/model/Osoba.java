@@ -1,5 +1,8 @@
 package model;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 public class Osoba extends Table {
     @Entity(type = "INTEGER", size = 50, primary = true)
     int id;
@@ -65,5 +68,21 @@ public class Osoba extends Table {
 
     public void setUloga(String uloga) {
         this.uloga = uloga;
+    }
+
+    public static Osoba login (String korisnickoIme, String lozinka) throws Exception {
+        String sql = "SELECT id FROM osoba WHERE korisnickoIme=? AND lozinka=?";
+        PreparedStatement query = Database.CONNECTION.prepareStatement(sql);
+        query.setString(1, korisnickoIme);
+        query.setString(2, lozinka);
+
+        ResultSet rs = query.executeQuery();
+
+        if (rs.next()) {
+            return (Osoba) Osoba.get(Osoba.class, rs.getInt(1));
+        } else {
+            return null;
+        }
+
     }
 }
