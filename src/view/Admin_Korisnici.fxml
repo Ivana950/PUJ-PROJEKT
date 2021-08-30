@@ -9,15 +9,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminKorisniciController">
    <children>
       <TextField fx:id="ime" layoutX="428.0" layoutY="75.0" />
       <TextField fx:id="prezime" layoutX="428.0" layoutY="111.0" />
       <TextField fx:id="korIme" layoutX="428.0" layoutY="146.0" />
       <TextField fx:id="uloga" layoutX="428.0" layoutY="215.0" />
-      <Label fx:id="loggedUserLbl" layoutX="23.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" text="Label">
+      <Label fx:id="loggedUserLbl" layoutX="23.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" text="Label" textFill="#05b7ed">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
       <Label layoutX="378.0" layoutY="79.0" text="Ime" />
@@ -25,14 +25,16 @@
       <Label layoutX="345.0" layoutY="142.0" prefHeight="33.0" prefWidth="98.0" text="Korisničko ime" />
       <Label layoutX="378.0" layoutY="185.0" text="Lozinka" />
       <Label layoutX="378.0" layoutY="219.0" text="Uloga" />
-      <Button fx:id="addUserBtn" layoutX="479.0" layoutY="253.0" mnemonicParsing="false" onAction="#addUserToDatabase" text="Dodaj korisnika" />
-      <Button fx:id="deleteUserBtn" layoutX="480.0" layoutY="291.0" mnemonicParsing="false" text="Izbriši korisnika" />
+      <Button fx:id="addUserBtn" layoutX="428.0" layoutY="253.0" mnemonicParsing="false" onAction="#addUserToDatabase" prefHeight="25.0" prefWidth="149.0" styleClass="btn" stylesheets="@style.css" text="Dodaj korisnika" textFill="WHITE" />
+      <Button fx:id="deleteUserBtn" layoutX="428.0" layoutY="291.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteUserFromDatabase" prefHeight="25.0" prefWidth="149.0" styleClass="btn" stylesheets="@style.css" text="Izbriši korisnika" textFill="WHITE" />
       <PasswordField fx:id="lozinka" layoutX="428.0" layoutY="181.0" />
-      <Button fx:id="odjava" alignment="CENTER" contentDisplay="CENTER" layoutX="483.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="98.0" text="Odjava" />
-      <TableView layoutX="23.0" layoutY="66.0" prefHeight="250.0" prefWidth="311.0">
+      <Button fx:id="odjava" alignment="CENTER" contentDisplay="CENTER" layoutX="509.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="72.0" styleClass="btn" stylesheets="@style.css" text="Odjava" textFill="WHITE" />
+      <TableView fx:id="tableView" layoutX="23.0" layoutY="66.0" prefHeight="250.0" prefWidth="311.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="imeTblCol" prefWidth="75.0" text="Ime" />
+          <TableColumn fx:id="prezimeTblCol" prefWidth="75.0" text="Prezime" />
+            <TableColumn fx:id="korImeTblCol" prefWidth="95.0" text="Korisničko ime" />
+            <TableColumn fx:id="ulogaTblCol" prefWidth="65.0" text="Uloga" />
         </columns>
       </TableView>
    </children>

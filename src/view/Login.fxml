@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -23,6 +24,7 @@
           <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
             <RowConstraints />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" percentHeight="0.0" prefHeight="30.0" />
         </rowConstraints>
          <children>
             <Label prefHeight="31.0" prefWidth="158.0" text="Korisničko ime" GridPane.rowIndex="1">
@@ -35,46 +37,50 @@
             </Label>
             <Label prefHeight="30.0" prefWidth="128.0" text="Lozinka" textAlignment="RIGHT" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="30.0" />
+                  <Insets left="30.0" top="30.0" />
                </GridPane.margin>
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="lozinkaTxt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="412.0" promptText="Unesite lozinku" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="korisnickoImeTxt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="411.0" promptText="Unesite korisničko ime" styleClass="input" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="korisnickoImeTxt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="411.0" promptText="Unesite korisničko ime" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
-            <Button fx:id="prijaviSeBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#prijaviSe" prefHeight="32.0" prefWidth="415.0" text="Prijavi se" textFill="#020303" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                <font>
-                  <Font size="16.0" />
                </font>
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
+            </TextField>
+            <Button fx:id="prijaviSeBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#prijaviSe" prefHeight="32.0" prefWidth="411.0" styleClass="btn" stylesheets="@style.css" text="Prijavi se" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets top="90.0" />
+               </GridPane.margin>
             </Button>
 
-       <Label fx:id="greskaLbl" text="Molimo unesite vaše korisničke podatke" textFill="RED" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+       <Label fx:id="greskaLbl" text="Unesite ispravne korisničke podatke" textFill="RED" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
            <font>
                <Font name="Arial Black" size="14.0" />
            </font>
            <padding>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               <Insets bottom="10.0" left="10.0" right="10.0" />
            </padding>
+               <GridPane.margin>
+                  <Insets top="100.0" />
+               </GridPane.margin>
        </Label>
-       <Label fx:id="uspjehLbl" prefHeight="21.0" prefWidth="199.0" text="Uspješno ste unijeli podatke" textFill="#0f8d33" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+       <Label fx:id="uspjehLbl" prefHeight="21.0" prefWidth="199.0" text="Uspješno ste unijeli podatke" textFill="#0f8d33" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
            <font>
                <Font name="Arial Black" size="14.0" />
            </font>
            <padding>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               <Insets bottom="10.0" left="10.0" right="10.0" />
            </padding>
+               <GridPane.margin>
+                  <Insets top="100.0" />
+               </GridPane.margin>
        </Label>
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="580.0" text="Dobrodošli u videoteku!" textAlignment="CENTER" GridPane.columnSpan="2">
                <font>
@@ -84,6 +90,10 @@
                   <Insets bottom="55.0" />
                </GridPane.margin>
             </Label>
+            <PasswordField fx:id="lozinkaTxt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="411.0" promptText="Unesite lozinku" styleClass="input" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin></PasswordField>
          </children>
          <padding>
             <Insets bottom="50.0" left="15.0" right="15.0" top="50.0" />

@@ -1,0 +1,17 @@
+.btn {
+    -fx-background-color: #05b7ed;
+
+}
+
+.btn:hover {
+    -fx-background-color: #6ed2f0;
+}
+
+.input {
+    -fx-background-color: none;
+    -fx-border-color: whitesmoke whitesmoke gray whitesmoke;
+}
+
+.input:focused {
+    -fx-border-color: whitesmoke whitesmoke #05b7ed whitesmoke;
+}

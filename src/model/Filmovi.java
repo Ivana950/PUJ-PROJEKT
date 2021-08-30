@@ -7,11 +7,22 @@ public class Filmovi extends Table {
     @Entity(type="VARCHAR", size=50, isnull = false)
     String naziv;
 
-    @Entity(type="VARCHAR", size=50, isnull = false)
-    String žanr;
 
     @Entity(type="VARCHAR", size=50, isnull = false)
     String trajanjeFilma;
+
+    @ForeignKey(table = "Žanr", attribute = "id")
+    @Entity(type = "INTEGER", size = 11)
+    int idŽanr;
+
+
+    public Žanr getŽanr() throws Exception{
+        return (Žanr)Table.get(Žanr.class, idŽanr);
+    }
+
+    public void setIdŽanr(int idŽanr) {
+        this.idŽanr = idŽanr;
+    }
 
     public int getId() {
         return id;
@@ -29,13 +40,6 @@ public class Filmovi extends Table {
         this.naziv = naziv;
     }
 
-    public String getŽanr() {
-        return žanr;
-    }
-
-    public void setŽanr(String žanr) {
-        this.žanr = žanr;
-    }
 
     public String getTrajanjeFilma() {
         return trajanjeFilma;

@@ -1,14 +1,12 @@
 package controller;
 
-import main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import main.Main;
 import model.Osoba;
-
-import java.io.IOException;
 
 public class LoginController {
 
@@ -30,9 +28,6 @@ public class LoginController {
     Label uspjehLbl;
 
     @FXML
-    TextField uloga;
-
-    @FXML
     public void prijaviSe(ActionEvent ev) {
         String korisnickoIme = this.korisnickoImeTxt.getText();
         String lozinka = this.lozinkaTxt.getText();
@@ -46,6 +41,7 @@ public class LoginController {
 
             try {
                 LoginController.loggedInOsoba = Osoba.login(korisnickoIme, lozinka);
+                assert LoginController.loggedInOsoba != null;
                 if (LoginController.loggedInOsoba.getUloga().equals("admin")) {
                     Main.showWindow(
                             getClass(),
