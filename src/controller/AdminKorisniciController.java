@@ -35,6 +35,11 @@ public class AdminKorisniciController implements Initializable {
     Label loggedUserLbl;
     @FXML
     Button odjava;
+    @FXML
+    Button favoriti;
+    @FXML
+    Label LoggedUserLbl;
+
 
 
     @FXML
@@ -50,16 +55,7 @@ public class AdminKorisniciController implements Initializable {
     @FXML
     TableColumn<Osoba, String>korImeTblCol;
 
-
     Collection<Osoba> osobe;
-
-    {
-        try {
-            osobe = (Collection<Osoba>) Osoba.list(Osoba.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     public void addUserToDatabase (ActionEvent e) throws Exception{

@@ -52,7 +52,7 @@ public class LoginController {
                 } else if (LoginController.loggedInOsoba.getUloga().equals("korisnik")) {
                     Main.showWindow(getClass(),
                             "../view/Korisnik.fxml",
-                            "Dobrodošli!", 785, 513);
+                            "Dobrodošli!", 600, 400);
                 } else {
                     greskaLbl.setText("Unesite ispravne korisničke podatke");
                     greskaLbl.setVisible(true);

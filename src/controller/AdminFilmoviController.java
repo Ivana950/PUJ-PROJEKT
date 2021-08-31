@@ -9,6 +9,9 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import main.Main;
 import model.Database;
 import model.Filmovi;
+import model.Osoba;
+import model.Žanr;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -16,6 +19,9 @@ import java.util.Collection;
 import java.util.ResourceBundle;
 
 public class AdminFilmoviController implements Initializable {
+
+    public static Žanr dohvaćeniŽanr;
+
     @FXML
     TextField naziv;
     @FXML
@@ -41,6 +47,7 @@ public class AdminFilmoviController implements Initializable {
     TableColumn<Filmovi, String>žanrTblCol;
 
     Collection<Filmovi> filmovi;
+    Collection<Žanr> žanrovi;
 
     {
         try {
@@ -50,19 +57,35 @@ public class AdminFilmoviController implements Initializable {
         }
     }
 
+    {
+        try {
+            žanrovi = (Collection<Žanr>) Žanr.list(Žanr.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @FXML
     public void addMovieToDatabase (ActionEvent e) throws Exception{
+        String žanr = this.žanr.getText().toString();
+        dohvaćeniŽanr = Žanr.dohvatiŽanr(žanr);
         if(!this.naziv.getText().equals("")&&
                 !this.trajanjeFilma.getText().equals("")&&
                 !this.žanr.getText().equals(""))
         {
-            Filmovi t = new Filmovi();
-            t.setNaziv(this.naziv.getText());
-            t.setTrajanjeFilma(this.trajanjeFilma.getText());
+            Žanr t = new Žanr();
+            t.setNaziv(this.žanr.getText());
 
+            Filmovi f = new Filmovi();
+            f.setNaziv(this.naziv.getText());
+            f.setTrajanjeFilma(this.trajanjeFilma.getText());
+            f.setIdŽanr(this.žanr.getText());
 
             t.save();
-            filmovi.add(t);
+            f.save();
+            filmovi.add(f);
+            žanrovi.add(t);
             this.populateTableView();
 
             this.naziv.setText("");

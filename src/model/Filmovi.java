@@ -16,7 +16,7 @@ public class Filmovi extends Table {
     int idŽanr;
 
 
-    public Žanr getŽanr() throws Exception{
+    public Žanr getŽanr() throws Exception{          //vraća objekt Žanr
         return (Žanr)Table.get(Žanr.class, idŽanr);
     }
 
