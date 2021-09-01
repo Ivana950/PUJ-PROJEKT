@@ -46,7 +46,7 @@ public class LoginController {
                     Main.showWindow(
                             getClass(),
                             "../view/Admin.fxml",
-                            "Welcome to administration", 618, 404
+                            "Dobrodošli u administraciju", 618, 404
                     );
 
                 } else if (LoginController.loggedInOsoba.getUloga().equals("korisnik")) {

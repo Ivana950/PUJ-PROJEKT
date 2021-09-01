@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class AdminFilmoviController implements Initializable {
 
-    public static Žanr žanrIzBaze;
+    public static Žanr dohvaćeniŽanr;
 
     @FXML
     TextField naziv;
@@ -69,19 +69,19 @@ public class AdminFilmoviController implements Initializable {
     @FXML
     public void addMovieToDatabase (ActionEvent e) throws Exception{
         String žanr = this.žanr.getText();
-        AdminFilmoviController.žanrIzBaze = Žanr.dohvatiŽanr(žanr);
+        AdminFilmoviController.dohvaćeniŽanr = Žanr.dohvatiŽanr(žanr);
 
-        if(AdminFilmoviController.žanrIzBaze != null &&
+        if(AdminFilmoviController.dohvaćeniŽanr != null &&
                 !this.naziv.getText().equals("")&&
                 !this.trajanjeFilma.getText().equals("")&&
-                !this.žanr.equals(žanrIzBaze))
+                !this.žanr.equals(dohvaćeniŽanr))
 
         {
 
             Filmovi f = new Filmovi();
             f.setNaziv(this.naziv.getText());
             f.setTrajanjeFilma(this.trajanjeFilma.getText());
-            f.setIdŽanr(žanrIzBaze.getId());
+            f.setIdŽanr(dohvaćeniŽanr.getId());
 
 
 

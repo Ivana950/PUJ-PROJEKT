@@ -21,8 +21,8 @@ public class Favoriti extends Table{
         this.id = id;
     }
 
-    public Filmovi getFilm() throws Exception {
-        return (Filmovi)Table.get(Filmovi.class, idFilm);
+    public int getIdFilm() {
+        return idFilm;
     }
 
     public void setIdFilm(int idFilm) {
