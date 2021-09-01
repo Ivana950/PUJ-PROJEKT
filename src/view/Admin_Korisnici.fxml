@@ -10,7 +10,6 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminKorisniciController">
-   <children>fx:controller="controller.AdminKorisniciController"
       <TextField fx:id="ime" layoutX="428.0" layoutY="75.0" />
       <TextField fx:id="prezime" layoutX="428.0" layoutY="111.0" />
       <TextField fx:id="korIme" layoutX="428.0" layoutY="146.0" />
@@ -37,5 +36,4 @@
             <TableColumn fx:id="ulogaTblCol" prefWidth="65.0" text="Uloga" />
         </columns>
       </TableView>
-   </children>
 </AnchorPane>

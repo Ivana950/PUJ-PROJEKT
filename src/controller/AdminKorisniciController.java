@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import model.Database;
+import model.Filmovi;
 import model.Osoba;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -36,8 +37,6 @@ public class AdminKorisniciController implements Initializable {
     @FXML
     Button odjava;
     @FXML
-    Button favoriti;
-    @FXML
     Label LoggedUserLbl;
 
 
@@ -56,6 +55,14 @@ public class AdminKorisniciController implements Initializable {
     TableColumn<Osoba, String>korImeTblCol;
 
     Collection<Osoba> osobe;
+
+    {
+        try {
+            osobe = (Collection<Osoba>) Osoba.list(Osoba.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     public void addUserToDatabase (ActionEvent e) throws Exception{

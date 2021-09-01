@@ -10,6 +10,15 @@ public class Žanr extends Table{
     @Entity(type="VARCHAR", size=50, isnull = false)
     String naziv;
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNaziv() {
         return naziv;
     }

@@ -81,7 +81,7 @@ public class AdminFilmoviController implements Initializable {
             Filmovi f = new Filmovi();
             f.setNaziv(this.naziv.getText());
             f.setTrajanjeFilma(this.trajanjeFilma.getText());
-            f.setIdŽanr(žanrIzBaze.getClass().getModifiers());
+            f.setIdŽanr(žanrIzBaze.getId());
 
 
 
@@ -108,12 +108,18 @@ public class AdminFilmoviController implements Initializable {
 
         this.nazivTblCol.setCellValueFactory(new PropertyValueFactory<>("naziv"));
         this.trajanjeFilmaTblCol.setCellValueFactory(new PropertyValueFactory<>("trajanjeFilma"));
-        this.žanrTblCol.setCellValueFactory(new PropertyValueFactory<>("žanr"));
+        this.žanrTblCol.setCellValueFactory(new PropertyValueFactory<>("idŽanr"));
 
+        try {
+            this.tableView.getItems().setAll((Collection<? extends Filmovi>) Filmovi.list(Filmovi.class));
+        } catch (Exception e) {
+            System.out.println("Nismo uspjeli dohvatiti podatke");
+        }
 
         this.nazivTblCol.setEditable(true);
+        this.nazivTblCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        this.trajanjeFilmaTblCol.setEditable(true);
         this.trajanjeFilmaTblCol.setCellFactory(TextFieldTableCell.forTableColumn());
-        this.žanrTblCol.setEditable(true);
 
         this.populateTableView();
 
