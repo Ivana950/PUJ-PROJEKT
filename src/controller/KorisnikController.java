@@ -38,32 +38,20 @@ public class KorisnikController implements Initializable {
     TableColumn<Filmovi, String>žanrTblCol;
 
     Collection<Filmovi> filmovi;
-    Collection<Žanr> žanrovi;
+
+    static ObservableList<Filmovi> list = FXCollections.observableArrayList();
+
     Collection<Favoriti> favoriti;
+
     static ObservableList<Favoriti> lista = FXCollections.observableArrayList();
 
-    {
-        try {
-            filmovi = (Collection<Filmovi>) Filmovi.list(Filmovi.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    {
-        try {
-            žanrovi = (Collection<Žanr>) Žanr.list(Žanr.class);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     public void openFavorites(ActionEvent evt) throws IOException {
         Main.showWindow(
                 getClass(),
                 "../view/Favoriti.fxml",
-                "Favoriti", 618, 404
+                "Favoriti", 548, 400
         );
     }
 
@@ -90,27 +78,28 @@ public class KorisnikController implements Initializable {
                         " " +
                         LoginController.loggedInOsoba.getPrezime());
 
+    dohvatiFilmove();
+    }
+
+    private void dohvatiFilmove () {
+        this.properties();
+        try {
+
+            filmovi = (Collection<Filmovi>) Filmovi.list(Filmovi.class);
+            this.tableView.getItems().setAll(filmovi);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        this.tableView.setEditable(true);
+    }
+
+    private void properties(){
         this.nazivTblCol.setCellValueFactory(new PropertyValueFactory<>("naziv"));
         this.trajanjeFilmaTblCol.setCellValueFactory(new PropertyValueFactory<>("trajanjeFilma"));
         this.žanrTblCol.setCellValueFactory(new PropertyValueFactory<>("idŽanr"));
 
-        try {
-            this.tableView.getItems().setAll((Collection<? extends Filmovi>) Filmovi.list(Filmovi.class));
-        } catch (Exception e) {
-            System.out.println("Nismo uspjeli dohvatiti podatke");
-        }
-
-        this.populateTableView();
-
     }
 
-    private void populateTableView(){
-        try {
-            this.tableView.getItems().setAll((Collection<? extends Filmovi>) Filmovi.list(Filmovi.class));
-        } catch (Exception e) {
-            System.out.println("Nismo uspjeli dohvatiti podatke");
-        }
-    }
 
 
     @FXML
