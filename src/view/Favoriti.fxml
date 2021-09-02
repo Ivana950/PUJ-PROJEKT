@@ -22,7 +22,7 @@
           <TableColumn fx:id="žanrTblCol" prefWidth="235.0" text="Žanr" />
         </columns>
       </TableView>
-      <Label fx:id="loggedUserLbl" layoutX="415.0" layoutY="28.0" prefHeight="27.0" prefWidth="86.0" text="Label" textFill="#05b7ed">
+      <Label fx:id="loggedUserLbl" layoutX="415.0" layoutY="28.0" prefHeight="27.0" prefWidth="86.0" text="Label" textAlignment="RIGHT" textFill="#05b7ed">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

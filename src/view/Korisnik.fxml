@@ -9,24 +9,29 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KorisnikController">
    <children>
-      <Button fx:id="dodajfavoritaBtn" layoutX="64.0" layoutY="342.0" mnemonicParsing="false" onAction="#addToFavorites" styleClass="btn" stylesheets="@style.css" text="Dodaj u favorite" textFill="WHITE" />
+      <Button fx:id="dodajfavoritaBtn" layoutX="58.0" layoutY="344.0" mnemonicParsing="false" onAction="#addToFavorites" styleClass="btn" stylesheets="@style.css" text="Dodaj u favorite" textFill="WHITE" />
       <Button fx:id="odjavaBtn" layoutX="523.0" layoutY="22.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="64.0" styleClass="btn" stylesheets="@style.css" text="Odjava" textFill="WHITE" />
       <Label fx:id="loggedUserLbl" layoutX="369.0" layoutY="25.0" prefHeight="21.0" prefWidth="76.0" text="Label" textFill="#05b7ed">
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <Label layoutX="67.0" layoutY="20.0" lineSpacing="2.0" text="VIDEOTEKA">
+      <Label layoutX="58.0" layoutY="21.0" lineSpacing="2.0" text="VIDEOTEKA">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Button fx:id="favoritiBtn" layoutX="450.0" layoutY="22.0" mnemonicParsing="false" onAction="#openFavorites" prefHeight="25.0" prefWidth="64.0" styleClass="btn" stylesheets="@style.css" text="Favoriti" textFill="WHITE" />
-      <TableView fx:id="tableView" layoutX="65.0" layoutY="75.0" prefHeight="247.0" prefWidth="484.0">
+      <TableView fx:id="tableView" layoutX="58.0" layoutY="77.0" prefHeight="247.0" prefWidth="484.0">
         <columns>
           <TableColumn fx:id="nazivTblCol" prefWidth="149.0" text="Naziv" />
           <TableColumn fx:id="trajanjeFilmaTblCol" prefWidth="167.0" text="Trajanje filma" />
             <TableColumn fx:id="žanrTblCol" prefWidth="167.0" text="Žanr" />
         </columns>
       </TableView>
+      <Label fx:id="uspjehLbl" layoutX="334.0" layoutY="344.0" prefHeight="25.0" prefWidth="208.0" text="Uspješno ste dodali favorita!" textFill="#0f8d33">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

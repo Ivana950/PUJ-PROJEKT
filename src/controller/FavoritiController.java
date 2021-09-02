@@ -39,6 +39,11 @@ public class FavoritiController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        this.loggedUserLbl.setText(
+                LoginController.loggedInOsoba.getIme() +
+                        " " +
+                        LoginController.loggedInOsoba.getPrezime());
+
         dohvatiOmiljeneFilmove();
     }
 
@@ -70,8 +75,8 @@ public class FavoritiController implements Initializable {
         Main.showWindow(
                 getClass(),
                 "../view/Korisnik.fxml",
-                "Albumi", 785, 513
-        );
+                "Dobrodošli!", 600, 400);
+
     }
 
     public void deleteFavorites(ActionEvent e) throws Exception {

@@ -27,7 +27,8 @@ public class KorisnikController implements Initializable {
     Button odjavaBtn;
     @FXML
     Button dodajfavoritaBtn;
-
+    @FXML
+    Label uspjehLbl;
     @FXML
     TableView<Filmovi> tableView;
     @FXML
@@ -63,11 +64,13 @@ public class KorisnikController implements Initializable {
             favoriti.removeIf(favoriti -> favoriti.getIdFilm() == f.getId());
 
             Favoriti t = new Favoriti();
-            t.setIdFilm(t.getId());
-            t.setIdOsoba(t.getIdOsoba());
+            t.setIdFilm(f.getId());
+            t.setIdOsoba(LoginController.loggedInOsoba.getId());
 
             t.save();
             favoriti.add(t);
+
+            uspjehLbl.setVisible(true);
         }
     }
 
@@ -79,6 +82,7 @@ public class KorisnikController implements Initializable {
                         LoginController.loggedInOsoba.getPrezime());
 
     dohvatiFilmove();
+    uspjehLbl.setVisible(false);
     }
 
     private void dohvatiFilmove () {

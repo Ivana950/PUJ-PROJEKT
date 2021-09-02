@@ -33,6 +33,8 @@ public class AdminFilmoviController implements Initializable {
     @FXML
     Button deleteMovieBtn;
     @FXML
+    Button goBackBtn;
+    @FXML
     Label loggedUserLbl;
     @FXML
     Button odjava;
@@ -171,6 +173,14 @@ public class AdminFilmoviController implements Initializable {
         } catch (Exception e) {
             System.out.println("Nismo uspjeli dohvatiti podatke");
         }
+    }
+
+    public void nazad(ActionEvent ev) throws IOException {
+        Main.showWindow(
+                getClass(),
+                "../view/Admin.fxml",
+                "Dobrodošli u administraciju!", 600, 400);
+
     }
 
 

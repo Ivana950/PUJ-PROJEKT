@@ -33,6 +33,8 @@ public class AdminKorisniciController implements Initializable {
     @FXML
     Button deleteUserBtn;
     @FXML
+    Button goBackBtn;
+    @FXML
     Label loggedUserLbl;
     @FXML
     Button odjava;
@@ -168,13 +170,21 @@ public class AdminKorisniciController implements Initializable {
         }
     }
 
+    public void nazad(ActionEvent ev) throws IOException {
+        Main.showWindow(
+                getClass(),
+                "../view/Admin.fxml",
+                "Dobrodošli u administraciju!", 600, 400);
+
+    }
+
     @FXML
     public void logout(ActionEvent ev) throws IOException {
         LoginController.loggedInOsoba = null;
         Main.showWindow(
                 getClass(),
                 "../view/Login.fxml",
-                "Login to system", 610, 270
+                "Prijavite se na sustav", 610, 270
         );
     }
 

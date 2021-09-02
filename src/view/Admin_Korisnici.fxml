@@ -14,9 +14,9 @@
       <TextField fx:id="prezime" layoutX="428.0" layoutY="111.0" />
       <TextField fx:id="korIme" layoutX="428.0" layoutY="146.0" />
       <TextField fx:id="uloga" layoutX="428.0" layoutY="215.0" />
-      <Label fx:id="loggedUserLbl" layoutX="23.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" text="Label" textFill="#05b7ed">
+      <Label fx:id="loggedUserLbl" layoutX="23.0" layoutY="14.0" prefHeight="27.0" prefWidth="131.0" text="Label" textFill="#05b7ed">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Label layoutX="378.0" layoutY="79.0" text="Ime" />
@@ -36,4 +36,5 @@
             <TableColumn fx:id="ulogaTblCol" prefWidth="65.0" text="Uloga" />
         </columns>
       </TableView>
+   <Button fx:id="goBackBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="349.0" mnemonicParsing="false" onAction="#nazad" prefHeight="25.0" prefWidth="72.0" styleClass="btn" stylesheets="@style.css" text="Nazad" textFill="WHITE" />
 </AnchorPane>
