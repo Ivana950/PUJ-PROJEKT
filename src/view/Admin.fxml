@@ -14,8 +14,9 @@
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
 
@@ -35,7 +36,7 @@
             <Insets left="200.0" top="90.0" />
          </GridPane.margin>
       </Label>
-      <Button fx:id="filmoviBtn" alignment="center" contentDisplay="CENTER" layoutX="210.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#otvoriFilmove" prefHeight="62.0" prefWidth="314.0" text="Filmovi" textAlignment="CENTER" GridPane.rowIndex="2">
+      <Button fx:id="filmoviBtn" alignment="center" contentDisplay="CENTER" layoutX="210.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#otvoriFilmove" prefHeight="62.0" prefWidth="314.0" text="Filmovi" textAlignment="CENTER" GridPane.rowIndex="3">
          <font>
             <Font size="20.0" />
          </font>
@@ -43,5 +44,13 @@
             <Insets bottom="10.0" left="140.0" />
          </GridPane.margin>
       </Button>
+   <Button fx:id="žanroviBtn" alignment="center" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#otvoriŽanrove" prefHeight="62.0" prefWidth="314.0" text="Žanrovi" textAlignment="CENTER" GridPane.rowIndex="2">
+      <font>
+         <Font size="20.0" />
+      </font>
+      <GridPane.margin>
+         <Insets bottom="10.0" left="140.0" />
+      </GridPane.margin>
+   </Button>
 
 </GridPane>

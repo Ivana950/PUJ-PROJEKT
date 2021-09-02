@@ -71,14 +71,6 @@ public class FavoritiController implements Initializable {
     }
 
 
-    public void nazad(ActionEvent ev) throws IOException {
-        Main.showWindow(
-                getClass(),
-                "../view/Korisnik.fxml",
-                "Dobrodošli!", 600, 400);
-
-    }
-
     public void deleteFavorites(ActionEvent e) throws Exception {
         Filmovi f = this.tableView.getSelectionModel().getSelectedItem();
         if(f != null){
@@ -95,6 +87,14 @@ public class FavoritiController implements Initializable {
             this.tableView.getItems().addAll(favoriti);
 
         }
+    }
+
+    public void nazad(ActionEvent ev) throws IOException {
+        Main.showWindow(
+                getClass(),
+                "../view/Korisnik.fxml",
+                "Dobrodošli!", 600, 400);
+
     }
 
 }

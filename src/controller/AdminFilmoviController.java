@@ -190,7 +190,7 @@ public class AdminFilmoviController implements Initializable {
         Main.showWindow(
                 getClass(),
                 "../view/Login.fxml",
-                "Login to system", 610, 270
+                "Prijava", 610, 270
         );
     }
 }

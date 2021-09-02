@@ -13,6 +13,8 @@ public class AdminController {
     @FXML
     Button korisniciBtn;
     @FXML
+    Button žanroviBtn;
+    @FXML
     Button filmoviBtn;
 
 
@@ -22,6 +24,15 @@ public class AdminController {
                 getClass(),
                 "../view/Admin_Korisnici.fxml",
                 "Administracija", 618, 404
+        );
+    }
+
+    @FXML
+    public void otvoriŽanrove(ActionEvent evt) throws IOException {
+        Main.showWindow(
+                getClass(),
+                "../view/Žanr.fxml",
+                "Žanrovi", 618, 404
         );
     }
 
